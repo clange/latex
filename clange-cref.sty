@@ -1,0 +1,122 @@
+% Author: Christoph Lange <math.semantic.web@gmail.com>
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{clange-cref}[2010/11/14]
+% Cleveref and setup.  There is no general way of including the type of the target into the counter, so we have to do it all manually (http://www.latex-community.org/forum/viewtopic.php?f=4&t=3081)
+\RequirePackage{cleveref}
+
+% RefTeX compatibility (make cleveref usable like fancyref)
+\let\fref\cref
+\let\Fref\Cref
+% combine \cref and \pageref
+\newcommand*{\pcref}[1]{\cref{#1} on page~\pageref{#1}}
+\newcommand*{\Pcref}[1]{\Cref{#1} on page~\pageref{#1}}
+% my custom types
+\creflabelformat{iapproach}{#2(#1)#3}
+\creflabelformat{ichallenge}{#2(#1)#3}
+\creflabelformat{icriterion}{#2(#1)#3}
+\creflabelformat{iproblem}{#2(#1)#3}
+\creflabelformat{istep}{#2(#1)#3}
+\creflabelformat{itranslationstep}{#2(#1)#3}
+\crefname{algorithm}{algorithm}{algorithms}
+\crefname{challenge}{challenge}{challenges}
+\crefname{criterion}{criterion}{criteria}
+\crefname{definition}{definition}{definitions} % sTeX
+\crefname{deliverable}{deliverable}{deliverables}
+\crefname{deliv}{D}{Ds}
+\crefname{example}{example}{examples} % sTeX
+\crefname{expression}{expression}{expressions}
+\crefname{figure}{figure}{figures}
+\crefname{formula}{formula}{formulæ}
+\crefname{hypothesis}{hypothesis}{hypotheses}
+\crefname{iapproach}{approach}{approaches}
+\crefname{ichallenge}{challenge}{challenges}
+\crefname{icriterion}{criterion}{criteria}
+\crefname{iproblem}{problem}{problems}
+\crefname{istep}{step}{steps}
+\crefname{itranslationstep}{translation step}{translation steps}
+\crefname{listing}{listing}{listings}
+\crefname{lstlisting}{listing}{listings}
+\crefname{objective}{objective}{objectives}
+\crefname{principle}{principle}{principles}
+\crefname{question}{question}{questions}
+\crefname{requirement}{requirement}{requirements}
+\crefname{research-question}{research question}{research questions}
+\crefname{step}{step}{steps}
+\crefname{task}{task}{tasks}
+\crefname{workarea}{work area}{work areas}
+\crefname{wa}{WA}{WAs}
+\crefname{workpackage}{work package}{work packages}
+\crefname{wp}{WP}{WPs}
+% cref with full hyperlink
+\Crefformat{algorithm}{#2Algorithm~#1#3}
+\Crefformat{appendix}{#2Appendix~#1#3}
+\Crefformat{challenge}{#2Challenge~#1#3}
+\Crefformat{chapter}{#2Chapter~#1#3}
+\Crefformat{criterion}{#2Criterion~#1#3}
+\Crefformat{definition}{#2Definition~#1#3}
+\Crefformat{deliverable}{#2Deliverable~#1#3}
+\Crefformat{deliv}{#2D#1#3}
+\Crefformat{example}{#2Example~#1#3}
+\Crefformat{expression}{#2Expression~#1#3}
+\Crefformat{figure}{#2Figure~#1#3}
+\Crefformat{formula}{#2Formula~#1#3}
+\Crefformat{hypothesis}{#2Hypothesis~#1#3}
+\Crefformat{iapproach}{#2Approach~(#1)#3}
+\Crefformat{ichallenge}{#2Challenge~(#1)#3}
+\Crefformat{icriterion}{#2Criterion~(#1)#3}
+\Crefformat{iproblem}{#2Problem~(#1)#3}
+\Crefformat{istep}{#2Step~(#1)#3}
+\Crefformat{itranslationstep}{#2Translation step~(#1)#3}
+\Crefformat{listing}{#2Listing~#1#3}
+\Crefformat{lstlisting}{#2Listing~#1#3}
+\Crefformat{objective}{#2Objective~#1#3}
+\Crefformat{part}{#2Part~#1#3}
+\Crefformat{principle}{#2Principle~#1#3}
+\Crefformat{question}{#2Question~#1#3}
+\Crefformat{requirement}{#2Requirement~#1#3}
+\Crefformat{research-question}{#2Research question~#1#3}
+\Crefformat{section}{#2Section~#1#3}
+\Crefformat{step}{#2Step~#1#3}
+\Crefformat{table}{#2Table~#1#3}
+\Crefformat{task}{#2Task~#1#3}
+\Crefformat{workarea}{#2Work Area~#1#3}
+\Crefformat{wa}{#2WA#1#3}
+\Crefformat{workpackage}{#2Work Package~#1#3}
+\Crefformat{wp}{#2WP#1#3}
+% now the same in lowercase
+\crefformat{algorithm}{#2algorithm~#1#3}
+\crefformat{appendix}{#2appendix~#1#3}
+\crefformat{challenge}{#2challenge~#1#3}
+\crefformat{chapter}{#2chapter~#1#3}
+\crefformat{criterion}{#2criterion~#1#3}
+\crefformat{definition}{#2definition~#1#3}
+\crefformat{deliverable}{#2deliverable~#1#3}
+\crefformat{deliv}{#2D#1#3}
+\crefformat{example}{#2example~#1#3}
+\crefformat{expression}{#2expression~#1#3}
+\crefformat{figure}{#2figure~#1#3}
+\crefformat{formula}{#2formula~#1#3}
+\crefformat{hypothesis}{#2hypothesis~#1#3}
+\crefformat{iapproach}{#2approach~(#1)#3}
+\crefformat{ichallenge}{#2challenge~(#1)#3}
+\crefformat{icriterion}{#2criterion~(#1)#3}
+\crefformat{iproblem}{#2problem~(#1)#3}
+\crefformat{istep}{#2step~(#1)#3}
+\crefformat{itranslationstep}{#2translation step~(#1)#3}
+\Crefformat{objective}{#2Objective~#1#3}
+\crefformat{listing}{#2listing~#1#3}
+\crefformat{lstlisting}{#2listing~#1#3}
+\crefformat{objective}{#2objective~#1#3}
+\crefformat{part}{#2part~#1#3}
+\crefformat{principle}{#2principle~#1#3}
+\crefformat{question}{#2question~#1#3}
+\crefformat{requirement}{#2requirement~#1#3}
+\crefformat{research-question}{#2research question~#1#3}
+\crefformat{section}{#2section~#1#3}
+\crefformat{step}{#2step~#1#3}
+\crefformat{table}{#2table~#1#3}
+\crefformat{task}{#2task~#1#3}
+\crefformat{workarea}{#2work area~#1#3}
+\crefformat{wa}{#2WA#1#3}
+\crefformat{workpackage}{#2work package~#1#3}
+\crefformat{wp}{#2WP#1#3}

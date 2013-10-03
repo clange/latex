@@ -1,0 +1,33 @@
+% definition of some characters, for use with
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% Author: Christoph Lange <math.semantic.web@gmail.com>
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{unicode-chars}[2013/09/19]
+\DeclareUnicodeCharacter{00A0}{~}%                                  
+\DeclareUnicodeCharacter{00A3}{\pounds}%                           £
+\DeclareUnicodeCharacter{00AE}{\textsuperscript{\textregistered}}% ®
+\DeclareUnicodeCharacter{00D7}{\ensuremath{\times}}%               ×
+\DeclareUnicodeCharacter{0101}{\=a}%                               ā
+\DeclareUnicodeCharacter{0123}{\c g}%                              ģ
+\DeclareUnicodeCharacter{0130}{\. I}%                              İ
+\DeclareUnicodeCharacter{0146}{\c n}%                              ņ
+\DeclareUnicodeCharacter{016B}{\=u}%                               ū
+\DeclareUnicodeCharacter{2190}{\ensuremath{\leftarrow}}%           ←
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}%          →
+% 2192: \textrightarrow is not available in all fonts
+\DeclareUnicodeCharacter{2193}{\ensuremath{\downarrow}}%           ↓
+\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}%      ↔
+\DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}%              ↦
+\DeclareUnicodeCharacter{21D2}{\ensuremath{\Rightarrow}}%          ⇒
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}%              ≈
+\DeclareUnicodeCharacter{219D}{\ensuremath{\leadsto}}%             ↝
+\@ifpackageloaded{MnSymbol}{%
+\DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}%               ⊕
+\DeclareUnicodeCharacter{2296}{\ensuremath{\ominus}}%              ⊖
+}{}
+\DeclareUnicodeCharacter{25CB}{\ensuremath{\ocircle}}%             ○
+\@ifpackageloaded{MnSymbol}{%
+\DeclareUnicodeCharacter{2605}{\ensuremath{\filledlargestar}}%     ★
+}{}
+\DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}%           ✓

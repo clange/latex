@@ -1,0 +1,14 @@
+% Poor man's Isabelle markup
+% Author: Christoph Lange <math.semantic.web@gmail.com>
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{pmisabelle}[2013/10/03]
+\newenvironment{pmi}{\[\begin{array}{l}}{\end{array}\]}
+\newcommand*{\pmikwstar}[1]{\mathbf{#1}}
+\newcommand*{\pmikwnostar}[1]{\pmikwstar{#1}\ }
+\newcommand\pmikw{\@ifstar\pmikwstar\pmikwnostar}
+\newcommand*{\pmiidstar}[1]{\mathit{#1}}
+\newcommand*{\pmiidnostar}[1]{\pmiidstar{#1}\ }
+\newcommand\pmiid{\@ifstar\pmiidstar\pmiidnostar}
+\newcommand*{\pmitmstar}[1]{\text{``}#1\text{''}}
+\newcommand*{\pmitmnostar}[1]{\pmitmstar{#1}\ }
+\newcommand\pmitm{\@ifstar\pmitmstar\pmitmnostar}
