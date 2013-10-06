@@ -7,12 +7,12 @@
 %
 % LaTeX:
 % \begin{pmi}
-%   \pmikw*{lemma}\\
-%   \quad\pmikw{fixes} \pmiid*{valid}::\text{``}\pmiid*{'Inputs} \Rightarrow \pmiid*{bool}\text{''}\\
-%   \quad\pmikw{and} R::\pmitm*{(\pmiid*{'Inputs} \times \pmiid*{'Outcomes})\ set\text{''}}\\
-%   \quad\pmikw{shows}\ \pmitm{(\forall \pmiid*{inp}\pmidot\pmiid{valid} \pmiid*{inp} \longrightarrow (\exists \pmiid*{out}\pmidot(\pmiid*{inp}, \pmiid*{out}) \in R))\\
-%   \qquad\longleftrightarrow \pmiid{Domain} R \supseteq \{ \pmiid*{inp}\pmidot\pmiid{valid} \pmiid*{inp}\}}\\
-%   \quad\pmikw{by} \pmiid*{blast}
+%   \pmikw*{lemma}\pminl
+%   \quad\pmikw{fixes} \pmiid*{valid}::\text{``}\pmiid*{'Inputs} \Rightarrow \pmiid*{bool}\text{''}\pminl
+%   \quad\pmikw{and} R::\pmitm*{(\pmiid*{'Inputs} \times \pmiid*{'Outcomes})\ set\text{''}}\pminl
+%   \quad\pmikw{shows}\ \pmitm{(\forall \pmiid*{inp}\pmidot\pmiid{valid} \pmiid*{inp} \longrightarrow (\exists \pmiid*{out}\pmidot(\pmiid*{inp}, \pmiid*{out}) \in R))\pminl
+%   \qquad\longleftrightarrow \pmiid{Domain} R \supseteq \{ \pmiid*{inp}\pmidot\pmiid{valid} \pmiid*{inp}\}}\pminl
+%   \quad\pmikw{by} \pmiid*{blast}\pmill
 % \end{pmi}
 %
 % Isabelle:
@@ -23,7 +23,16 @@
 %   by blast
 
 % the environment in which all of the following commands should be used
-\newenvironment{pmi}{\[\begin{array}{l}}{\end{array}\]}
+\newenvironment{pmi}{%
+  \setlength{\jot}{0pt}
+  \start@align\tw@\st@rredtrue\m@ne&
+}{%         
+  \endalign
+}
+% a new line
+\newcommand*{\pminl}{&\\ &}
+% last line
+\newcommand*{\pmill}{&}
 % the dot after quantified variables (with some space)
 \newcommand*{\pmidot}{\,.\,}
 % The following commands normally have a space appended, unless you use the starred variant.
