@@ -21,6 +21,12 @@
 % http://isabelle.in.tum.de
 % partial specification; poor man's alternative to Isabelle's own LaTeX export
 % but see also pmisabelle.sty
+\newif\iflst@instring\lst@instringfalse
+\newcommand*{\lst@eat}[1]{}%
+\newcommand*{\togglelst@instring}{%
+\upshape%
+\iflst@instring\global\lst@instringfalse''\else\global\lst@instringtrue``\fi%
+}
 \lstdefinelanguage{Isabelle}[]{ML}%
 {morekeywords={%
 assume,%
@@ -38,10 +44,15 @@ qed,%
 show,%
 shows,%
 theorem,%
+try,%
 unfolding,%
 using,%
 where,%
 },
+stringstyle=\togglelst@instring\lst@eat,% eat the "; render our own
+basicstyle=\itshape,%
+keywordstyle=\upshape\bfseries,%
+columns=fullflexible,%
 showstringspaces=false,%
 mathescape,%
 }[keywords,comments]
