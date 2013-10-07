@@ -2,6 +2,7 @@
 % \usepackage[utf8]{inputenc}
 % \usepackage[T1]{fontenc}
 % Author: Christoph Lange <math.semantic.web@gmail.com>
+% Some math characters taken from John Wickerson's MathUnicode.sty (http://tex.stackexchange.com/questions/110042/entering-unicode-math-symbols-into-latex-direct-from-keyboard-on-a-mac)
 % https://github.com/clange/latex
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesPackage{unicode-chars}[2013/09/19]
@@ -21,7 +22,11 @@
 \DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}%      ↔
 \DeclareUnicodeCharacter{21A6}{\ensuremath{\mapsto}}%              ↦
 \DeclareUnicodeCharacter{21D2}{\ensuremath{\Rightarrow}}%          ⇒
+\DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}%              ∀
+\DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}%              ∃
+\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}%                  ∈
 \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}%              ≈
+\DeclareUnicodeCharacter{2287}{\ensuremath{\supseteq}}%            ⊇
 \DeclareUnicodeCharacter{219D}{\ensuremath{\leadsto}}%             ↝
 \@ifpackageloaded{MnSymbol}{%
 \DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}%               ⊕
@@ -32,3 +37,5 @@
 \DeclareUnicodeCharacter{2605}{\ensuremath{\filledlargestar}}%     ★
 }{}
 \DeclareUnicodeCharacter{2713}{\ensuremath{\checkmark}}%           ✓
+\DeclareUnicodeCharacter{27F6}{\ensuremath{\longrightarrow}}%      ⟶
+\DeclareUnicodeCharacter{27F7}{\ensuremath{\longleftrightarrow}}%  ⟷
