@@ -4,7 +4,9 @@
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesPackage{pmisabelle}[2013/10/03]
 \RequirePackage{amsmath}% for align environments
-% Example: a lemma
+% Documentation
+%
+% The following sample lemma does everything the hard way.  It is recommended to use this package with unicode-chars.sty (to be able to copy/paste mathematical Unicode symbols from Isabelle/jEdit or ProofGeneral).
 %
 % LaTeX:
 % \begin{pmi}
@@ -22,6 +24,8 @@
 %     and R::"('Inputs × 'Outcomes) set"
 %   shows "(∀ inp . valid inp ⟶ (∃ out . (inp, out) ∈ R)) ⟷ Domain R ⊇ { inp . valid inp }"
 %   by blast
+%
+% If you want automated keyword highlighting and feel like experimenting, you can use lstsemantic.sty and, instead of \begin{pmi}...\end{pmi} wrap your Isabelle listing into \begin{lstlisting}[language=Isabelle]...\end{lstlisting}.  For the inner language you would then have to manually go into math mode by using $...$.
 
 % the environment in which all of the following commands should be used
 \newenvironment{pmi}{%
@@ -34,6 +38,8 @@
 \newcommand*{\pminl}{&\\ &}
 % last line
 \newcommand*{\pmill}{&}
+% type restriction colon when not everything is in math mode (e.g. when using this with listings.sty and lstsemantic.sty)
+\newcommand*{\pmity}{{}::{}}
 % The following commands normally have a space appended, unless you use the starred variant.
 % keyword of the Isabelle/Isar language
 \newcommand*{\pmikwstar}[1]{\mathbf{#1}}
