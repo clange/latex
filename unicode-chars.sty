@@ -5,10 +5,11 @@
 % Some math characters taken from John Wickerson's MathUnicode.sty (http://tex.stackexchange.com/questions/110042/entering-unicode-math-symbols-into-latex-direct-from-keyboard-on-a-mac)
 % https://github.com/clange/latex
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesPackage{unicode-chars}[2013/09/19]
+\ProvidesPackage{unicode-chars}[2013/10/08]
 \DeclareUnicodeCharacter{00A0}{~}%                                  
 \DeclareUnicodeCharacter{00A3}{\pounds}%                           £
 \DeclareUnicodeCharacter{00AE}{\textsuperscript{\textregistered}}% ®
+\DeclareUnicodeCharacter{00AF}{\ensuremath{^-}}%                   ¯
 \DeclareUnicodeCharacter{00D7}{\ensuremath{\times}}%               ×
 \DeclareUnicodeCharacter{0101}{\=a}%                               ā
 \DeclareUnicodeCharacter{0123}{\c g}%                              ģ
@@ -25,7 +26,9 @@
 \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}%              ∀
 \DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}%              ∃
 \DeclareUnicodeCharacter{2208}{\ensuremath{\in}}%                  ∈
+\DeclareUnicodeCharacter{2227}{\ensuremath{\wedge}}%               ∧
 \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}%              ≈
+\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}%            ⊆
 \DeclareUnicodeCharacter{2287}{\ensuremath{\supseteq}}%            ⊇
 \DeclareUnicodeCharacter{219D}{\ensuremath{\leadsto}}%             ↝
 \@ifpackageloaded{MnSymbol}{%
