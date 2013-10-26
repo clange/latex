@@ -29,8 +29,8 @@
 
 % the environment in which all of the following commands should be used
 \newenvironment{pmi}{%
-  \setlength{\jot}{0pt}
-  \start@align\tw@\st@rredtrue\m@ne&
+  \setlength{\jot}{0pt}% no additional vertical spacing
+  \start@align\tw@\st@rredtrue\m@ne&% same environment as align*
 }{%         
   \endalign
 }
